@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Place Order System</title>
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Place Order System</h1>
+    <hr>
+    <h2>Update Item</h2>
+    <hr>
+    <form action="#" th:action="@{/save}" th:object="${order}" 
+        method="POST">
+
+        <input type="hidden" th:field="*{id}" />
+        <input type="text" th:field="*{name}" placeholder="exp: book" class="form-control mb-4 col-4" />
+        <input type="text" th:field="*{type}" placeholder="exp: stationary" class="form-control mb-4 col-4" />
+        <input type="text" th:field="*{price}" placeholder="exp: 1.00" class="form-control mb-4 col-4" />
+        <input type="text" th:field="*{quantity}" placeholder="exp: 30" class="form-control mb-4 col-4" />
+        <button type="submit" class="btn btn-info col-2">Update Item</button>
+    </form>
+    <hr>
+    <a th:href="@{/}">Back to Item list</a>
+</div>
+</body>
+</html>
